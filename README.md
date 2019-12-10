@@ -1,6 +1,6 @@
 # cricket-score-whatsappbot
 
- **Sign up and get your keys from cricapi.com and twilio.com. Clone this code and run it to get push updates on upcoming amd ongoing matches to your fav whatsapp account.**
+ **Sign up and get your keys from cricapi.com and twilio.com. Clone this code and run it to push updates of upcoming amd ongoing matches to your fav whatsapp account.**
 
 ## How to run
 
