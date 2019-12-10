@@ -1,7 +1,0 @@
-{
-	"url_get_all_matches":"https://cricapi.com/api/matches",
-	"getscore":"https://cricapi.com/api/cricketScore",
-	"apikey":"7RNGn5rVPYWhDLlvSGCk4NOXY333",
-	"unique_id" : null,
-	"listed_teams" : ["India"]
-}
