@@ -9,7 +9,7 @@
 {
 	"url_get_all_matches":"https://cricapi.com/api/matches",
 	"getscore":"https://cricapi.com/api/cricketScore",
-	"apikey":"xxxxxxxxxxxxx",
+	"apikey":"paste the key you got after creating your account",
 	"unique_id" : null,
 	"listed_teams" : ["India"]
 }
@@ -22,7 +22,7 @@
 	"account_sid" : "xxxxxxxx",
 	"auth_token" : "xxxxxxxx",
 	"from_no" : "your twilio whatsapp no. here", 
-	"to_no" : "the whatsapp no. you want to recieve updates at:"
+	"to_no" : "the whatsapp no. you want to recieve updates at"
 }
 
 4. Navigate to project directory in terminal and run python main.py. (You might need to send a message 'Join catch-measure' from the whatsapp account you want to recieve updates at to your twilio whatsapp no. you will get after signing up.)
