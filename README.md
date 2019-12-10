@@ -1,6 +1,6 @@
 # cricket-score-whatsappbot
 
- An application bot to update you with cricket scores with customizable configuration and preferences.
+ An application bot to update you with cricket scores in whatsapp with customizable configuration and preferences.
  
  **Sign up and get your keys from cricapi.com and twilio.com. Clone this code and run it to push updates of upcoming amd ongoing matches to your fav whatsapp account.**
 
