@@ -2,6 +2,7 @@ import json
 import copy
 import requests
 from datetime import datetime
+import time
 
 class CricAPI:	
 	
@@ -28,7 +29,9 @@ class CricAPI:
 		for match in resp_dict["matches"]:
 			if (match["team-1"] in self.listed_teams or match["team-2"] in self.listed_teams):
 				todays_date = datetime.today().strftime("%Y-%m-%d")
-				self.match_time=match["dateTimeGMT"].replace('T', '  ').replace('Z', '')
+				self.UTC_match_time = datetime.strptime(match["dateTimeGMT"].replace('T', ' ').replace('Z', ''), '%Y-%m-%d %H:%M:%S.%f')
+				offset = datetime.fromtimestamp(time.time()) - datetime.utcfromtimestamp(time.time())
+				self.match_time = self.UTC_match_time + offset
 				self.unique_id=match["unique_id"]
 				self.get_score()
 				self.score.append(self.iter_data)
@@ -44,7 +47,7 @@ class CricAPI:
 
 		if not(data_json["matchStarted"]):
 			self.iter_data = data_json["team-1"]\
-			+ " vs " + data_json["team-2"] + "\nUPCOMING on\n" + self.match_time
+			+ " vs " + data_json["team-2"] + "\nUPCOMING on\n" + str(self.match_time).replace(' ', ' at ').split('.')[0]
 			return
 		
 		try:
@@ -57,4 +60,4 @@ class CricAPI:
 		except KeyError as e:
 			print("keyerror: ", e)
 
-		self.iter_data = self.iter_data + "\n\t" + "started at" + self.match_time
+		self.iter_data = self.iter_data + "\n\t" + "started on " + str(self.match_time).replace(' ', ' at ').split('.')[0]
